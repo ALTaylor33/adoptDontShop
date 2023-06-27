@@ -1,6 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ handleSearch }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [speciesFilter, setSpeciesFilter] = useState('');
+  const [breedFilter, setBreedFilter] = useState('');
+  const [weightFilter, setWeightFilter] = useState('');
+  const [colorFilter, setColorFilter] = useState('');
+  const [genderFilter, setGenderFilter] = useState('');
+  const [radiusFilter, setRadiusFilter] = useState('');
+
+  const handleSearchInput = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleFilterChange = (event) => {
+    const filterName = event.target.name;
+    const filterValue = event.target.value;
+
+    switch (filterName) {
+      case 'species':
+        setSpeciesFilter(filterValue);
+        break;
+      case 'breed':
+        setBreedFilter(filterValue);
+        break;
+      case 'weight':
+        setWeightFilter(filterValue);
+        break;
+      case 'color':
+        setColorFilter(filterValue);
+        break;
+      case 'gender':
+        setGenderFilter(filterValue);
+        break;
+      case 'radius':
+        setRadiusFilter(filterValue);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    const filters = {
+      species: speciesFilter,
+      breed: breedFilter,
+      weight: weightFilter,
+      color: colorFilter,
+      gender: genderFilter,
+      radius: radiusFilter
+    };
+    handleSearch(searchTerm, filters);
+  };
+
   return (
     <nav>
       <ul>
@@ -9,6 +62,23 @@ const Navbar = () => {
         <li><a href="/services">My Profile</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
+      <form onSubmit={handleSearchSubmit}>
+        <input
+          type="text"
+          placeholder="Search pets..."
+          value={searchTerm}
+          onChange={handleSearchInput}
+        />
+        <select name="species" value={speciesFilter} onChange={handleFilterChange}>
+          <option value="">Species</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="rabbit">Rabbit</option>
+          <option value="reptile">Reptile</option>
+        </select>
+        {/* Add more filters */}
+        <button type="submit">Search</button>
+      </form>
     </nav>
   );
 };
