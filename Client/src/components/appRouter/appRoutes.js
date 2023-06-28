@@ -1,19 +1,23 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Main from './main';
-import Adoption from './adoption';
-import Donation from './donation';
-import Contact from './Contact';
-import NotFound from './NotFound';
+import Main from '../main/main';
+import User from '../user/user';
+import Adoption from '../adoption/adoption';
+import Donation from '../donation/donation';
+import Contact from '../contact/contact';
+import NotFound from '../notFound/notFound';
+import SearchResults from '../searchResults/searchResults'
 
 const AppRouter = () => {
     return (
       <Routes>
-        <Route path="/" element={<AboutMe />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/adoption" element={<Adoption />} />
+        <Route path="/donation" element={<Donation />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/searchResults" element={<SearchResults />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     );
