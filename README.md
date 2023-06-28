@@ -72,4 +72,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Credits
 
-https://semantic-ui.com/index.html 
+- https://semantic-ui.com/index.html 
+
+- https://developer.mozilla.org
