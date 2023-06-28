@@ -14,27 +14,26 @@ const Navbar = ({ handleSearch }) => {
   };
 
   const handleFilterChange = (event) => {
-    const filterName = event.target.name;
-    const filterValue = event.target.value;
-
-    switch (filterName) {
+    const { name, value } = event.target;
+  
+    switch (name) {
       case 'species':
-        setSpeciesFilter(filterValue);
+        setSpeciesFilter(value);
         break;
       case 'breed':
-        setBreedFilter(filterValue);
+        setBreedFilter(value);
         break;
       case 'weight':
-        setWeightFilter(filterValue);
+        setWeightFilter(value);
         break;
       case 'color':
-        setColorFilter(filterValue);
+        setColorFilter(value);
         break;
       case 'gender':
-        setGenderFilter(filterValue);
+        setGenderFilter(value);
         break;
       case 'radius':
-        setRadiusFilter(filterValue);
+        setRadiusFilter(value);
         break;
       default:
         break;
