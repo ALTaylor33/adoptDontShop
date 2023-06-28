@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Main from './main';
+import Main from '../';
 import Adoption from './adoption';
 import Donation from './donation';
 import Contact from './Contact';
 import NotFound from './NotFound';
-
+import SearchResults from '.searchResults'
 const AppRouter = () => {
     return (
       <Routes>
