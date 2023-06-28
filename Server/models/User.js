@@ -4,32 +4,32 @@ const userSchema = new Schema({
     name: {
         type: String,
         required: true
-      },
-      email: {
+    },
+    email: {
         type: String,
         required: true,
         unique: true
-      },
-      password: {
+    },
+    password: {
         type: String,
         required: true
-      },
-      address: {
+    },
+    address: {
         type: String,
         required: true
-      },
-      phone: {
+    },
+    phone: {
         type: String,
         required: true
-      },
-      SavedPets: [
+    },
+    SavedPets: [
         {
-        type: Schema.Types.ObjectId,
-        ref: 'Pets'
+            type: Schema.Types.ObjectId,
+            ref: 'Pets'
         }
-      ],
-      Donations: 
-        {
+    ],
+    Donations:
+    {
         type: integer
     }
 })
