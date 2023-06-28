@@ -9,6 +9,7 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <link rel="stylesheet" href="styles.css"/> 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -27,7 +28,33 @@
     <title>React App</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- <img src="Client/public/logo192.png"> -->
+
+   
+    <div class="container contactNav">
+      <li>Contact Us</li><br>
+      <li>Donate</li><br>
+    </div>
+
+    <div class="container searchBar">
+      <ul class="nav navbar-inverse nav-tabs">
+        <div class="ui three buttons">
+          <li><button class="ui active button">HOME</button></li>
+          <li><button class="ui button">ADOPT</button></li>
+          <li><button class="ui button">ABOUT</button></li>
+        </div>
+      </ul>
+    </div>
+
+    <container> <div class="carousel">
+      <img src="Client/public/image1.jpg" alt="Image 1" /> 
+      <img src="Client/public/image2.jpg" alt="Image 2" />
+      <img src="Client/public/image3.jpg" alt="Image 3" />
+    </div>
+</container>
+   
+<!-- get animal stock imgs -->
+   
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -41,3 +68,4 @@
     -->
   </body>
 </html>
+<script src="Server/schemas/index.js"></script>
