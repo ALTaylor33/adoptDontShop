@@ -10,6 +10,7 @@
       content="Web site created using create-react-app"
     />
     <link rel="stylesheet" href="styles.css"/> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -32,27 +33,36 @@
     <!-- <img src="Client/public/logo192.png"> -->
 
    
-    <div class="container contactNav">
-      <li>Contact Us</li><br>
-      <li>Donate</li><br>
-    </div>
-
-    <div class="container searchBar">
-      <ul class="nav navbar-inverse nav-tabs">
-        <div class="ui three buttons">
-          <li><button class="ui active button">HOME</button></li>
-          <li><button class="ui button">ADOPT</button></li>
-          <li><button class="ui button">ABOUT</button></li>
-        </div>
+<header>
+  <div class="container searchBar">
+    <nav class="nav navbar-inverse nav-tabs tabs is-left">
+      <ul style="list-style-type:none">
+        <li><button class="ui active button">HOME</button></li>
+        <li><button class="ui active button">ADOPT</button></li>
+        <li><button class="ui active button">ABOUT</button></li>
+        <li><button class="ui active button">DONATE</button></li>
       </ul>
+    </header>
+    </nav>
+  </div>
+       
+
+<br>
+    
+        </div>
+      </nav>
     </div>
 
-    <container> <div class="carousel">
-      <img src="Client/public/image1.jpg" alt="Image 1" /> 
-      <img src="Client/public/image2.jpg" alt="Image 2" />
-      <img src="Client/public/image3.jpg" alt="Image 3" />
-    </div>
+<div>
+  <container> 
+    <div class="Petcarousel">
+    <img src="Client/public/image1.jpg" alt="Image 1" /> 
+    <img src="Client/public/image2.jpg" alt="Image 2" />
+    <img src="Client/public/image3.jpg" alt="Image 3" />
+  </div>
 </container>
+</div>
+   
    
 <!-- get animal stock imgs -->
    
@@ -67,6 +77,10 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <footer> 
+      Contact Us <br><br>
+      Adopt! Don't Shop&copy;</footer>
   </body>
 </html>
 <script src="Server/schemas/index.js"></script>

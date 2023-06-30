@@ -1,5 +1,11 @@
+const contactNav = document.getElementsByClassName(".nav");
+const search = document.getElementsByClassName (".searchBar");
+
+
+
+
 window.addEventListener('DOMContentLoaded', (event) => {
-    const carousel = document.querySelector('.carousel');
+    const carousel = document.querySelector('.Petcarousel');
     const images = carousel.querySelectorAll('img');
 
     let currentIndex = 0;
