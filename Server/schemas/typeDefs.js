@@ -1,3 +1,7 @@
+
+const { gql } = require('apollo-server-express');
+
+const typeDefs = gql`
 type Pet {
     _id: ID!
     name: String!
@@ -43,4 +47,7 @@ type Query {
     password: String!
     address: String!
     phone: String!
-  }
+  }`
+
+  module.exports = typeDefs;
+

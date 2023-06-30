@@ -27,10 +27,11 @@ const userSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: 'Pets'
         }
-    ],
-    Donations:
-    {
-        type: integer
+
+      ],
+      Donations: 
+        {
+        type: Number
     }
 })
 
