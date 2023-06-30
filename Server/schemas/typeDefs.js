@@ -7,7 +7,7 @@ type Pet {
     name: String!
     species: String!
     breed: String!
-    age: Int!
+    age: Int
     gender: String!
     color: String!
     isAdopted: Boolean!
@@ -24,6 +24,7 @@ type User {
     address: String!
     phone: String!
     savedPets: [Pet]
+    donations: Number
 }
 
 type Query {
@@ -38,7 +39,7 @@ type Query {
     updateUser(id: ID!, input: UserInput): User
     deleteUser(id: ID!): User
     savePet(userId: ID!, petId: ID!): User
-    unsavePet(userId: ID!, petId: ID!): User
+    unSavePet(userId: ID!, petId: ID!): User
   }
   
   input UserInput {

@@ -15,7 +15,6 @@ const petsSchema = new Schema({
       },
       age: {
         type: Number,
-        required: true
       },
       gender: {
         type: String,
@@ -33,7 +32,8 @@ const petsSchema = new Schema({
         type: Date
       },
       description: {
-        type: String
+        type: String,
+        maxLength: 255
       },
       images: {
         type: [String]

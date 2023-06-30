@@ -1,45 +1,45 @@
 
-const { Profile } = require('../models');
+const { User, Pet } = require('../models');
 
 const resolvers = {
   Query: {
-    profiles: async () => {
-      return Profile.find();
+    allUsers: async () => {
+      return User.find();
     },
 
-    profile: async (parent, { profileId }) => {
-      return Profile.findOne({ _id: profileId });
+    user: async (parent, { userId }) => {
+      return User.findOne({ _id: userId });
+    },
+
+    allPets: async () => {
+      return Pet.find();
+    },
+
+    pet: async () => {
+      return Pet.findOne({ breed: breed, age: age });
+
     },
   },
 
-  Mutation: {
-    addProfile: async (parent, { name }) => {
-      return Profile.create({ name });
-    },
-    addSkill: async (parent, { profileId, skill }) => {
-      return Profile.findOneAndUpdate(
-        { _id: profileId },
-        {
-          $addToSet: { skills: skill },
-        },
-        {
-          new: true,
-          runValidators: true,
-        }
-      );
-    },
-    removeProfile: async (parent, { profileId }) => {
-      return Profile.findOneAndDelete({ _id: profileId });
-    },
-    removeSkill: async (parent, { profileId, skill }) => {
-      return Profile.findOneAndUpdate(
-        { _id: profileId },
-        { $pull: { skills: skill } },
-        { new: true }
-      );
-    },
-  },
-};
+    Mutation: {
+      addUser: async (parent, { username, email, password, address, phone }) => {
+        return await User.create({ username, email, password, address, phone });
+      },
+      addPet: async (parent, { name, breed, species, gender, color }) => {
+        return await Pet.create({ name, breed, species, gender, color });
 
-module.exports = resolvers;
+      },
+      removeUser: async (parent, { userId }) => {
+        return user.findOneAndDelete({ _id: userId });
+      },
+      removePet: async (parent, { petId }) => {
+        return pet.findOneAndUpdate(
+          { _id: petId },
+
+        );
+      },
+    },
+  };
+
+  module.exports = resolvers;
 
