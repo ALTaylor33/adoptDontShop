@@ -1,0 +1,20 @@
+.main {
+    position: relative;
+    /* Add other styles for the main container as needed */
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .background.active {
+    opacity: 1;
+  }
