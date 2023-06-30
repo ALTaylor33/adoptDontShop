@@ -1,5 +1,53 @@
 [
     {
+        "name": "Kipper",
+        "species": "Dog",
+        "breed":"English Cocker Spaniel",
+        "age": "2",
+        "gender":"Male",
+        "color": "Tan",
+        "isAdoped": "false",
+        "availableDate": "6/29/23",
+        "description": "",
+        "images": ""
+    },
+    {
+        "name": "Socks",
+        "species": "Cat",
+        "breed":"American Shorthair",
+        "age": "1",
+        "gender":"Male",
+        "color": "White",
+        "isAdoped": "true",
+        "availableDate": "6/29/23",
+        "description": "",
+        "images": ""
+    },
+    {
+        "name": "Grace",
+        "species": "Rabbit",
+        "breed":"Holland Lop",
+        "age": "3",
+        "gender":"Female",
+        "color": "Brown",
+        "isAdoped": "false",
+        "availableDate": "6/29/23",
+        "description": "",
+        "images": ""
+    },
+    {
+        "name": "Iggy",
+        "species": "Reptile",
+        "breed":"Green Iguana",
+        "age": "2",
+        "gender":"Female",
+        "color": "Green",
+        "isAdoped": "true",
+        "availableDate": "6/29/23",
+        "description": "",
+        "images": ""
+    },
+    {
         "name": "",
         "species": "",
         "breed":"",
