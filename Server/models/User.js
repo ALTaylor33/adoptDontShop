@@ -30,7 +30,7 @@ const userSchema = new Schema({
       ],
       Donations: 
         {
-        type: integer
+        type: Number
     }
 })
 
