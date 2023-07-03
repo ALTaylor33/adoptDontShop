@@ -9,7 +9,7 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="stylesheet" href="styles.css"/> 
+    <link rel="stylesheet" href="../src/index.css"/> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
@@ -29,27 +29,41 @@
     -->
     <title>React App</title>
   </head>
-  <body>
+  <div>
     <!-- <img src="Client/public/logo192.png"> -->
-
+  </div>
    
 <header>
-  <div class="container searchBar">
-    <nav class="nav navbar-inverse nav-tabs tabs is-small">
+  <div id="grid-container">
+    <nav class="nav nav-tabs tabs is-small">
+      <nav class="is-left">
       <ul style="list-style-type:none">
         <li><button class="ui active button">HOME</button></li>
         <li><button class="ui active button">ADOPT</button></li>
         <li><button class="ui active button">ABOUT</button></li>
         <li><button class="ui active button">DONATE</button></li>
+        <!-- change button hover color -->
       </ul>
-    </header>
+    
+  <div class="container searchBar"> 
+    
+
+    
     </nav>
+  </nav>
   </div>
-<!-- 
-  <div class="control">
-  <input class="input" type="text" placeholder="Text input"> -->
-</div>
-       
+  <div id="grid-container searchBar">
+  <div class="control has-icons-right">
+    <input class="input" type="text" placeholder="Text input">
+    <span class="icon is-small is-left"></span>
+  </div>
+</header>
+ 
+    
+
+
+
+
 
 <br>
     
@@ -58,16 +72,28 @@
     </div>
 
 
-<section>
-  <container> 
+
+  <div id="grid-container">
+    <div class="box">
+      <article class="media">
+        <div class="media-center">
+        
+          <figure>
+            <!-- <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image"> -->
+         
+       
+        <div class="media-content">
+          <div class="content">
     <div class="Petcarousel">
     <img src="Client/public/image1.jpg" alt="Image 1" /> 
     <img src="Client/public/image2.jpg" alt="Image 2" />
     <img src="Client/public/image3.jpg" alt="Image 3" />
   </div>
-</container>
-</section>
- 
+</div>
+</div>
+
+</figure>
+<br>
 
    
    
@@ -84,11 +110,18 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <section>
-      <footer> 
-        Contact Us <br><br>
-        Adopt! Don't Shop&copy;</footer>
-    </section>
+
+
+
+
+    <div style="clear: both">
+
+      <footer> Contact Us <br><br>
+    Adopt! Don't Shop&copy;</footer>
+   </div>
+    
+      
+  
 
   
   </body>
