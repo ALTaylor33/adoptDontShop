@@ -9,7 +9,7 @@ db.once('open', async () => {
     await User.deleteMany({});
     await Pets.deleteMany({});
 
-    const schools = await User.insertMany(userData);
+    const users = await User.insertMany(userData);
     const pets = await Pets.insertMany(petsData);
 
     console.log('Seeding completed');

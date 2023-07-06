@@ -4,7 +4,7 @@ import { HttpLink } from "apollo-link-http";
 
 const restLink = new RestLink({
   endpoints: {
-    openBookApi: "https://open.exhangerate-api.com/v6/",//change to actual api site url
+    petFinderApi: "https://api.petfinder.com/v2/animals",
   }
 })
 
