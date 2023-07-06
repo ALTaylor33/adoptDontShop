@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, Carousel, Button } from 'react-bootstrap';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
-const Adoption = () => {
+const Adoption = ({userId}) => {
   const [pet, setPet] = useState(null);
   const [isSaved, setIsSaved] = useState(false);
 
