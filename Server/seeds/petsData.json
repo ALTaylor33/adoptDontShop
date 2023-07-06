@@ -46,17 +46,6 @@
         "availableDate": "6/29/23",
         "description": "",
         "images": ""
-    },
-    {
-        "name": "",
-        "species": "",
-        "breed":"",
-        "age": "",
-        "gender":"",
-        "color": "",
-        "isAdoped": "",
-        "availableDate": "",
-        "description": "",
-        "images": ""
     }
+    
 ]
