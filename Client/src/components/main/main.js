@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Carousel } from 'react-bootstrap';
 
 const Main = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const backgrounds = [
-    'image1.jpg',
-    'image2.jpg',
-    'image3.jpg'
+    'Client/public/assests/img/774079.jpg',
+    'Client/public/assests/img/puppy.jpg',
+    'Client/public/assests/img/puppykitty.png'
   ];
 
   useEffect(() => {
@@ -18,13 +19,14 @@ const Main = () => {
     };
   }, [backgrounds.length]);
 
-  const currentBackground = backgrounds[backgroundIndex];
-
   return (
-    <div className="main">
-      <div className="background" style={{ backgroundImage: `url(${currentBackground})` }}></div>
-      {/* Your content here */}
-    </div>
+    <Carousel interval={null} activeIndex={backgroundIndex}>
+      {backgrounds.map((background, index) => (
+        <Carousel.Item key={background}>
+          <img className="d-block w-100" src={background} alt={`Background ${index + 1}`} />
+        </Carousel.Item>
+      ))}
+    </Carousel>
   );
 };
 
