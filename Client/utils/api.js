@@ -10,6 +10,51 @@ export const getPets = ()=> {
         console.log(error)
     });
 }
+
+//TODO: replace 'Dog' with ${userInput} exported from react component???
+export const searchType = ()=> {
+  client.animalData.type('Dog')
+  .then(resp => {
+    console.log(response.data)
+    })
+    .catch(function (error) {
+      // Handle the error
+      console.log(error)
+  });
+}
+
+//TODO: replace 'dog' with userInput
+export const searchBreed = ()=>{
+  client.animalData.breeds('dog')
+  .then(resp => {
+    // Do something with resp.data.breeds
+  })
+  .catch(function (error) {
+    // Handle the error
+    console.log(error)
+});
+}
+
+//TODO: we will need a prompt to select user's preferred location
+const searchOrgs = ()=> {
+  client.organization.search({location: "Minneapolis, MN"})
+  .then(resp => {
+    // Do something with resp.data.organizations
+  })
+  .catch(function (error) {
+    // Handle the error
+    console.log(error)
+});
+}
+//show clicked organization
+//TODO: input clicked organization's code not "MN423"
+const searchSingleOrg = ()=> {
+  client.organization.show("MN423")
+  .then(resp => {
+    // Do something with resp.data.organization
+  });
+}
+
 export const createUser = (userData) => {
     return fetch('/signup', {
       method: 'POST',
