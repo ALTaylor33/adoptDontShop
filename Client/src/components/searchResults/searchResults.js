@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-const SearchResults = ({ searchQuery }) => {
+const SearchResults = () => {
   const [pets, setPets] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [petsPerPage] = useState(20);
+  const [searchParams, setSearchParams] = useSearchParams()
+  console.log(searchParams)
+  let filters = ''
+  const filtersArr = []
+  // get values from the query string and convert the URLParams object into a string of parameters again
+  for (let param of searchParams.entries()) {
+     filtersArr.push(`${param[0]}=${param[1]}`)
+  }
+  filters = filtersArr.join('&')
 
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await fetch(`https://api.petfinder.com/v2/animals?type=dog&location=${searchQuery}&limit=${petsPerPage}&page=${currentPage}`, {
-          headers: {
-            'Authorization': 'Bearer YOUR_API_KEY'
-          }
+        const response = await fetch(`/petfinder?${filters}&limit=${petsPerPage}&page=${currentPage}`, {
+         
         });
         const data = await response.json();
         setPets(data.animals);
@@ -21,7 +29,7 @@ const SearchResults = ({ searchQuery }) => {
     };
 
     fetchPets();
-  }, [searchQuery, currentPage, petsPerPage]);
+  }, [searchParams, currentPage, petsPerPage]);
 
   const indexOfLastPet = currentPage * petsPerPage;
   const indexOfFirstPet = indexOfLastPet - petsPerPage;
