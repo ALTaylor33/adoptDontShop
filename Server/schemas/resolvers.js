@@ -3,43 +3,42 @@ const { User, Pet } = require('../models');
 
 const resolvers = {
   Query: {
-    allUsers: async () => {
+    getUsers: async () => {
       return User.find();
     },
 
-    user: async (parent, { userId }) => {
+    getUserById: async (parent, { userId }) => {
       return User.findOne({ _id: userId });
     },
 
-    allPets: async () => {
+    getPets: async () => {
       return Pet.find();
     },
 
-    pet: async () => {
-      return Pet.findOne({ breed: breed, age: age });
-
+    getPetById: async (parent, { petId }) => {
+      return Pet.findOne({ _id: petId });
     },
   },
 
-    Mutation: {
-      addUser: async (parent, { username, email, password, address, phone }) => {
-        return await User.create({ username, email, password, address, phone });
-      },
-      addPet: async (parent, { name, breed, species, gender, color }) => {
-        return await Pet.create({ name, breed, species, gender, color });
-
-      },
-      removeUser: async (parent, { userId }) => {
-        return user.findOneAndDelete({ _id: userId });
-      },
-      removePet: async (parent, { petId }) => {
-        return pet.findOneAndUpdate(
-          { _id: petId },
-
-        );
-      },
+  Mutation: {
+    createUser: async (parent, { username, email, password, address, phone }) => {
+      return await User.create({ username, email, password, address, phone });
     },
-  };
+    savePet: async (parent, { name, breed, species, gender, color }) => {
+      return await Pet.create({ name, breed, species, gender, color });
 
-  module.exports = resolvers;
+    },
+    deleteUser: async (parent, { userId }) => {
+      return User.findOneAndDelete({ _id: userId });
+    },
+    deletePet: async (parent, { petId }) => {
+      return Pet.findOneAndUpdate(
+        { _id: petId },
+
+      );
+    },
+  },
+};
+
+module.exports = resolvers;
 

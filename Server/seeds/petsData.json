@@ -6,7 +6,7 @@
         "age": "2",
         "gender":"Male",
         "color": "Tan",
-        "isAdoped": "false",
+        "isAdopted": "false",
         "availableDate": "6/29/23",
         "description": "",
         "images": ""
@@ -18,7 +18,7 @@
         "age": "1",
         "gender":"Male",
         "color": "White",
-        "isAdoped": "true",
+        "isAdopted": "true",
         "availableDate": "6/29/23",
         "description": "",
         "images": ""
@@ -30,7 +30,7 @@
         "age": "3",
         "gender":"Female",
         "color": "Brown",
-        "isAdoped": "false",
+        "isAdopted": "false",
         "availableDate": "6/29/23",
         "description": "",
         "images": ""
@@ -42,7 +42,7 @@
         "age": "2",
         "gender":"Female",
         "color": "Green",
-        "isAdoped": "true",
+        "isAdopted": "true",
         "availableDate": "6/29/23",
         "description": "",
         "images": ""
