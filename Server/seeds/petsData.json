@@ -6,7 +6,7 @@
         "age": "2",
         "gender": "Male",
         "color": "Tan",
-        "isAdoped": "false",
+        "isAdopted": "false",
         "availableDate": "6/29/23",
         "description": "Loves tug of war and fetch but hates water so good luck giving him a bath. Kipper is lovable and energetic; the perfect new pet.",
         "images": ""
@@ -18,7 +18,7 @@
         "age": "1",
         "gender": "Male",
         "color": "White",
-        "isAdoped": "true",
+        "isAdopted": "true",
         "availableDate": "6/29/23",
         "description": "Socks is always on the move chasing after something you can't see. He's the best cat for funny cat videos as he tears through your house doing flips and attacking objects",
         "images": ""
@@ -30,7 +30,7 @@
         "age": "3",
         "gender": "Female",
         "color": "Brown",
-        "isAdoped": "false",
+        "isAdopted": "false",
         "availableDate": "6/29/23",
         "description": "Grace is soft, warm and relaxed. She loves to be held and cuddled",
         "images": ""
@@ -42,7 +42,7 @@
         "age": "2",
         "gender": "Female",
         "color": "Green",
-        "isAdoped": "true",
+        "isAdopted": "true",
         "availableDate": "6/29/23",
         "description": "Don't let her scaly appearance scare you, Iggy is fun and lovable like rest of our pets with a particular love of chin scratches",
         "images": ""
@@ -54,7 +54,7 @@
         "age": "3",
         "gender": "Male",
         "color": "Red/Green",
-        "isAdoped": "True",
+        "isAdopted": "True",
         "availableDate": "6/29/23",
         "description": "Not the most active pet we have, but certainly the most interesting. Rango can climb just about anything and blend in with his surroundings, and when its feeding time he catches anything with his long tounge",
         "images": ""
@@ -66,7 +66,7 @@
         "age": "1",
         "gender": "Female",
         "color": "Black/Brown/White",
-        "isAdoped": "False",
+        "isAdopted": "False",
         "availableDate": "6/29/23",
         "description": "Clumsy as she is, Molly loves to run around her cage and on her treadmill.",
         "images": ""
@@ -78,7 +78,7 @@
         "age": "10",
         "gender": "Female",
         "color": "Red",
-        "isAdoped": "False",
+        "isAdopted": "False",
         "availableDate": "6/29/23",
         "description": "Named after Black Beard's ship, this bird is fierce. Don't let that fool you though, She's always looking for affection.",
         "images": ""
@@ -90,7 +90,7 @@
         "age": "4",
         "gender": "Male",
         "color": "Brown/White",
-        "isAdoped": "False",
+        "isAdopted": "False",
         "availableDate": "6/29/23",
         "description": "Kevin loves to loot trinkets and paper weights, keep and eye out for his hoard that he likes to keep under furniture.",
         "images": ""
@@ -102,7 +102,7 @@
         "age": ">1",
         "gender": "Female",
         "color": "Black",
-        "isAdoped": "False",
+        "isAdopted": "False",
         "availableDate": "6/29/23",
         "description": "Stacy is the next best fish to add to your fish tank. She is calm and collected and pretty to look at.",
         "images": ""
@@ -114,7 +114,7 @@
         "age": "8",
         "gender": "Male",
         "color": "Brown/Green",
-        "isAdoped": "False",
+        "isAdopted": "False",
         "availableDate": "6/29/23",
         "description": "Franklin loves a nice warm bath, especially if you scrub him with a tooth brush.",
         "images": ""
@@ -126,7 +126,7 @@
         "age": "6",
         "gender": "Female",
         "color": "Brown",
-        "isAdoped": "False",
+        "isAdopted": "False",
         "availableDate": "6/29/23",
         "description": "Well-trained and lazy, Bailey loves to bask in the sun.",
         "images": ""
@@ -138,7 +138,7 @@
         "age": "2",
         "gender": "Male",
         "color": "Orange",
-        "isAdoped": "True",
+        "isAdopted": "True",
         "availableDate": "6/29/23",
         "description": "Extremely soft and fun to play with, Gus is big and ornery. His favorite thing to do is eat",
         "images": ""
@@ -150,7 +150,7 @@
         "age": "4",
         "gender": "Female",
         "color": "Brown",
-        "isAdoped": "False",
+        "isAdopted": "False",
         "availableDate": "6/29/23",
         "description": "Big and beautiful Willow is about as big as a medium sized dog. Shes soft and loves to cuddle.",
         "images": ""
@@ -162,7 +162,7 @@
         "age": "3",
         "gender": "Female",
         "color": "Tan",
-        "isAdoped": "False",
+        "isAdopted": "False",
         "availableDate": "6/29/23",
         "description": "Stella is friendly to a fault. Shes a great choice for a new and growing family",
         "images": ""
@@ -174,7 +174,7 @@
         "age": "5",
         "gender": "Female",
         "color": "White",
-        "isAdoped": "False",
+        "isAdopted": "False",
         "availableDate": "6/29/23",
         "description": "Luna loves to go outside and play in the grass. Watch that she doesn't run off because she is fast.",
         "images": ""
