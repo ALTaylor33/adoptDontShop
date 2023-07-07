@@ -18,20 +18,20 @@ type Pet {
 
 type User {
     _id: ID!
-    name: String!
+    username: String!
     email: String!
     password: String!
     address: String!
     phone: String!
     savedPets: [Pet]
-    donations: Number
+    donations: Int
 }
 
 type Query {
     getPets: [Pet]
-    getPetById(id: ID!): Pet
+    getPetById(petId: ID!): Pet
     getUsers: [User]
-    getUserById(id: ID!): User
+    getUserById(userId: ID!): User
   }
 
   type Mutation {
@@ -39,7 +39,7 @@ type Query {
     updateUser(id: ID!, input: UserInput): User
     deleteUser(id: ID!): User
     savePet(userId: ID!, petId: ID!): User
-    unSavePet(userId: ID!, petId: ID!): User
+    deletePet(userId: ID!, petId: ID!): User
   }
   
   input UserInput {
