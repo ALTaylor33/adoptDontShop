@@ -19,3 +19,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     setInterval(nextSlide, intervalTime);
   });
+const typeDefs = require('./typeDefs');
+const resolvers = require('./resolvers');
+
+
+
+module.exports = { typeDefs, resolvers };
+    setInterval(nextSlide, intervalTime);
+  

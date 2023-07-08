@@ -27,7 +27,9 @@ const SearchResults = ({ searchQuery }) => {
   const indexOfFirstPet = indexOfLastPet - petsPerPage;
   const currentPets = pets.slice(indexOfFirstPet, indexOfLastPet);
 
-  const paginate = (pageNumber) => {
+  const totalPages = Math.ceil(pets.length / petsPerPage);
+
+  const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
@@ -57,18 +59,17 @@ const SearchResults = ({ searchQuery }) => {
       </ul>
       <Pagination
         currentPage={currentPage}
-        petsPerPage={petsPerPage}
-        totalPets={pets.length}
-        paginate={paginate}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
       />
     </div>
   );
 };
 
-const Pagination = ({ currentPage, petsPerPage, totalPets, paginate }) => {
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(totalPets / petsPerPage); i++) {
+  for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
 
@@ -79,7 +80,7 @@ const Pagination = ({ currentPage, petsPerPage, totalPets, paginate }) => {
           key={pageNumber}
           className={pageNumber === currentPage ? 'active' : ''}
         >
-          <button onClick={() => paginate(pageNumber)}>{pageNumber}</button>
+          <button onClick={() => onPageChange(pageNumber)}>{pageNumber}</button>
         </li>
       ))}
     </ul>

@@ -1,5 +1,19 @@
 {
   "dependencies": {
     "bulma": "^0.9.4"
+  "name": "adoptdontshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "node ./server/seeds/seed.js",
+    "build": "cd client && npm run build"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "react-icons": "^4.10.1"
   }
 }
