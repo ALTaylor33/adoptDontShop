@@ -56,10 +56,10 @@ const Navbar = ({ handleSearch }) => {
   return (
     <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/donate">Donate</a></li>
-        <li><a href="/user">My Profile</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li className="ui active button"><a href="/">Home</a></li>
+        <li className="ui active button"><a href="/donate">Donate</a></li>
+        <li className="ui active button"><a href="/user">My Profile</a></li>
+        <li className="ui active button"><a href="/contact">Contact</a></li>
       </ul>
       <form onSubmit={handleSearchSubmit}>
         <input
@@ -83,3 +83,8 @@ const Navbar = ({ handleSearch }) => {
 };
 
 export default Navbar;
+
+//need to move site name & logo to upper left corner & bottom right corner 
+//search bar needs to be on same lne w/ nav buttons
+//add bg imgs, scrap carousel 
+//update site theme (blue)
