@@ -28,6 +28,7 @@ const resolvers = {
     savePet: async (parent, { name, breed, species, gender, color }) => {
       return await Pet.create({ name, breed, species, gender, color });
 
+
     },
     deleteUser: async (parent, { userId }) => {
       return User.findOneAndDelete({ _id: userId });
@@ -40,5 +41,22 @@ const resolvers = {
     },
   },
 };
+
+
+    },
+    deleteUser: async (parent, { userId }) => {
+      return User.findOneAndDelete({ _id: userId });
+    },
+    deletePet: async (parent, { petId }) => {
+      return Pet.findOneAndUpdate(
+        { _id: petId },
+
+      );
+    },
+  },
+};
+
+module.exports = resolvers;
+
 
 module.exports = resolvers;
