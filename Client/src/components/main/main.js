@@ -4,9 +4,9 @@ import { Carousel } from 'react-bootstrap';
 const Main = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const backgrounds = [
-    'Client/public/assests/img/774079.jpg',
-    'Client/public/assests/img/puppy.jpg',
-    'Client/public/assests/img/puppykitty.png'
+    './Client/public/assests/img/774079.jpg',
+    './Client/public/assests/img/puppy.jpg',
+    './Client/public/assests/img/puppykitty.png'
   ];
 
   useEffect(() => {
