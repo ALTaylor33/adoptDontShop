@@ -1,42 +1,48 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
 
+=======
+import { useNavigate } from 'react-router-dom'
+//removed  from parameters of Navbar
+>>>>>>> 63b6f10dd810d760f46a454a7c18eee49bbcbfe4
 const Navbar = ({ handleSearch }) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
-  const [speciesFilter, setSpeciesFilter] = useState('');
-  const [breedFilter, setBreedFilter] = useState('');
-  const [weightFilter, setWeightFilter] = useState('');
-  const [colorFilter, setColorFilter] = useState('');
-  const [genderFilter, setGenderFilter] = useState('');
-  const [radiusFilter, setRadiusFilter] = useState('');
+  const [typeFilter, setTypeFilter] = useState('');
+  // const [breedFilter, setBreedFilter] = useState('');
+  // const [weightFilter, setWeightFilter] = useState('');
+  // const [colorFilter, setColorFilter] = useState('');
+  // const [genderFilter, setGenderFilter] = useState('');
+  // const [radiusFilter, setRadiusFilter] = useState('');
+  const navigate = useNavigate();
 
   const handleSearchInput = (event) => {
-    setSearchTerm(event.target.value);
+      setSearchTerm(event.target.value);
   };
 
   const handleFilterChange = (event) => {
     const { name, value } = event.target;
   
     switch (name) {
-      case 'species':
-        setSpeciesFilter(value);
+      case 'type':
+        setTypeFilter(value);
         break;
-      case 'breed':
-        setBreedFilter(value);
-        break;
-      case 'weight':
-        setWeightFilter(value);
-        break;
-      case 'color':
-        setColorFilter(value);
-        break;
-      case 'gender':
-        setGenderFilter(value);
-        break;
-      case 'radius':
-        setRadiusFilter(value);
-        break;
+      // case 'breed':
+      //   setBreedFilter(value);
+      //   break;
+      // case 'weight':
+      //   setWeightFilter(value);
+      //   break;
+      // case 'color':
+      //   setColorFilter(value);
+      //   break;
+      // case 'gender':
+      //   setGenderFilter(value);
+      //   break;
+      // case 'radius':
+      //   setRadiusFilter(value);
+      //   break;
       default:
         break;
     }
@@ -45,15 +51,33 @@ const Navbar = ({ handleSearch }) => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     const filters = {
-      species: speciesFilter,
-      breed: breedFilter,
-      weight: weightFilter,
-      color: colorFilter,
-      gender: genderFilter,
-      radius: radiusFilter
+      species: typeFilter,
+      // breed: breedFilter,
+      // weight: weightFilter,
+      // color: colorFilter,
+      // gender: genderFilter,
+      // radius: radiusFilter
     };
+<<<<<<< HEAD
     handleSearch(searchTerm, filters);
     navigate(`/searchResults?search=${searchTerm}`); 
+=======
+
+    // generate a string in a key=value format, ex type=cat&location=texas
+    const filtersArray = []
+    for (let key in filters) {
+      filtersArray.push(`${key}=${filters[key]}`)
+    }
+    const searchFilters = filtersArray.join('&')
+    console.log(searchFilters)
+    //navigate to the searchresults page with query parameters
+    navigate({
+      pathname: '/searchResults',
+      search: `?location=${searchTerm}&${searchFilters}`
+    })
+    //window.location.href = '/searchResults?query='+searchTerm
+    //handleSearch(searchTerm, filters);
+>>>>>>> 63b6f10dd810d760f46a454a7c18eee49bbcbfe4
   };
 
   return (
@@ -71,7 +95,7 @@ const Navbar = ({ handleSearch }) => {
           value={searchTerm}
           onChange={handleSearchInput}
         />
-        <select name="species" value={speciesFilter} onChange={handleFilterChange}>
+        <select name="type" value={typeFilter} onChange={handleFilterChange}>
           <option value="">Species</option>
           <option value="dog">Dog</option>
           <option value="cat">Cat</option>
