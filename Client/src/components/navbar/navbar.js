@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
-import { useNavigate } from 'react-router-dom';
-
-=======
 import { useNavigate } from 'react-router-dom'
 //removed  from parameters of Navbar
->>>>>>> 63b6f10dd810d760f46a454a7c18eee49bbcbfe4
 const Navbar = ({ handleSearch }) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
@@ -15,7 +10,7 @@ const Navbar = ({ handleSearch }) => {
   // const [colorFilter, setColorFilter] = useState('');
   // const [genderFilter, setGenderFilter] = useState('');
   // const [radiusFilter, setRadiusFilter] = useState('');
-  const navigate = useNavigate();
+
 
   const handleSearchInput = (event) => {
       setSearchTerm(event.target.value);
@@ -58,10 +53,6 @@ const Navbar = ({ handleSearch }) => {
       // gender: genderFilter,
       // radius: radiusFilter
     };
-<<<<<<< HEAD
-    handleSearch(searchTerm, filters);
-    navigate(`/searchResults?search=${searchTerm}`); 
-=======
 
     // generate a string in a key=value format, ex type=cat&location=texas
     const filtersArray = []
@@ -77,7 +68,6 @@ const Navbar = ({ handleSearch }) => {
     })
     //window.location.href = '/searchResults?query='+searchTerm
     //handleSearch(searchTerm, filters);
->>>>>>> 63b6f10dd810d760f46a454a7c18eee49bbcbfe4
   };
 
   return (
