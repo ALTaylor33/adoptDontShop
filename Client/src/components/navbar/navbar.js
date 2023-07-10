@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ handleSearch }) => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [speciesFilter, setSpeciesFilter] = useState('');
   const [breedFilter, setBreedFilter] = useState('');
@@ -51,6 +53,7 @@ const Navbar = ({ handleSearch }) => {
       radius: radiusFilter
     };
     handleSearch(searchTerm, filters);
+    navigate(`/searchResults?search=${searchTerm}`); 
   };
 
   return (
