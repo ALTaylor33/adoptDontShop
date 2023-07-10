@@ -3,6 +3,12 @@
     /* Add other styles for the main container as needed */
   }
   
+.test {
+  width: 50px;
+  
+}  
+  
+  
   .background {
     position: absolute;
     top: 0;
