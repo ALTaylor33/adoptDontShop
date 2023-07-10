@@ -43,20 +43,5 @@ const resolvers = {
 };
 
 
-    },
-    deleteUser: async (parent, { userId }) => {
-      return User.findOneAndDelete({ _id: userId });
-    },
-    deletePet: async (parent, { petId }) => {
-      return Pet.findOneAndUpdate(
-        { _id: petId },
-
-      );
-    },
-  },
-};
-
 module.exports = resolvers;
 
-
-module.exports = resolvers;
