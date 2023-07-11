@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+
+
 //removed  from parameters of Navbar
 const Navbar = ({ handleSearch }) => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
   // const [breedFilter, setBreedFilter] = useState('');
@@ -9,7 +13,7 @@ const Navbar = ({ handleSearch }) => {
   // const [colorFilter, setColorFilter] = useState('');
   // const [genderFilter, setGenderFilter] = useState('');
   // const [radiusFilter, setRadiusFilter] = useState('');
-  const navigate = useNavigate();
+
 
   const handleSearchInput = (event) => {
       setSearchTerm(event.target.value);
@@ -71,12 +75,14 @@ const Navbar = ({ handleSearch }) => {
 
   return (
     <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/donate">Donate</a></li>
-        <li><a href="/user">My Profile</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
+      <div className='header' >
+      <h1>Adopt Dont Shop</h1>
+      </div>
+        <Link to="/" >Home</Link>
+        <Link to="/Donation" >Donate</Link>
+        <Link to="/User" >User</Link>
+        <Link to="Contact" >Contact</Link>
+        <Link to="Adoption" >Adopt!</Link>
       <form onSubmit={handleSearchSubmit}>
         <input
           type="text"
