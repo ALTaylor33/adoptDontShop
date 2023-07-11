@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Carousel, Button } from 'react-bootstrap';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import picture from '../../assests/img/puppy.jpg';
+// import picture from 'Client/src/assets/img/background3.jpg';
 
 const Adoption = ({userId}) => {
   // const [pet, setPet] = useState(null);

@@ -78,6 +78,7 @@ const Navbar = ({ handleSearch }) => {
           <option value="reptile">Reptile</option>
         </select>
         {/* Add more filters */}
+  
         <Button type="submit" variant="outline-success">Search</Button>
       </Form>
       </Navbar.Collapse>
