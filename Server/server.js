@@ -45,7 +45,7 @@ app.get('/petfinder', async (req, res) => {
   try {
     const params = {
       //animal: req.query.animal,
-      location: req.query.location,
+      //location: req.query.location,
       type: req.query.species,
       limit: req.query.limit,
       page: req.query.page,
