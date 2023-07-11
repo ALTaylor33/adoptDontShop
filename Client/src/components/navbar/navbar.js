@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
-//removed  from parameters of Navbar
+import Button from 'react-bootstrap/Button';
+
 const Navbar = ({ handleSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
-  // const [breedFilter, setBreedFilter] = useState('');
-  // const [weightFilter, setWeightFilter] = useState('');
-  // const [colorFilter, setColorFilter] = useState('');
-  // const [genderFilter, setGenderFilter] = useState('');
-  // const [radiusFilter, setRadiusFilter] = useState('');
-
+  const [breedFilter, setBreedFilter] = useState('');
+  const [weightFilter, setWeightFilter] = useState('');
+  const [colorFilter, setColorFilter] = useState('');
+  const [genderFilter, setGenderFilter] = useState('');
+  const [radiusFilter, setRadiusFilter] = useState('');
 
   const handleSearchInput = (event) => {
     setSearchTerm(event.target.value);
@@ -17,10 +16,10 @@ const Navbar = ({ handleSearch }) => {
 
   const handleFilterChange = (event) => {
     const { name, value } = event.target;
- 
+
     switch (name) {
-      case 'species':
-        setSpeciesFilter(value);
+      case 'type':
+        setTypeFilter(value);
         break;
       case 'breed':
         setBreedFilter(value);
@@ -45,7 +44,7 @@ const Navbar = ({ handleSearch }) => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     const filters = {
-      species: speciesFilter,
+      type: typeFilter,
       breed: breedFilter,
       weight: weightFilter,
       color: colorFilter,
@@ -78,14 +77,10 @@ const Navbar = ({ handleSearch }) => {
           <option value="reptile">Reptile</option>
         </select>
         {/* Add more filters */}
-  
         <Button type="submit" variant="outline-success">Search</Button>
-      </Form>
-      </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      </form>
+    </nav>
   );
 };
-
 
 export default Navbar;
