@@ -16,7 +16,6 @@ const Main = () => {
       setBackgroundIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
     }, 15000);
 
-
     return () => {
       clearInterval(interval);
     };
@@ -36,4 +35,3 @@ const Main = () => {
 
 
 export default Main;
-

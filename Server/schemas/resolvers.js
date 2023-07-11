@@ -39,9 +39,14 @@ const resolvers = {
 
       );
     },
+<<<<<<< HEAD
   },
 };
 
 
 module.exports = resolvers;
+=======
+  }
+}
+>>>>>>> main
 
