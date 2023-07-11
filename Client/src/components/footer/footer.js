@@ -41,20 +41,3 @@ export default function Footer() {
   );
 }
 
-
-// import React from 'react';
-
-
-// const Footer = () => {
-//   return (
-//     <div>
-//       <footer> Contact Us
-//         <br />
-//         Adopt! Don't Shop&copy;
-//       </footer>
-//     </div>
-//   );
-// };
-
-
-// export default Footer;
