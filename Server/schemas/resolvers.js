@@ -40,10 +40,8 @@ const resolvers = {
       );
     },
   },
-};
 
 
-    },
     deleteUser: async (parent, { userId }) => {
       return User.findOneAndDelete({ _id: userId });
     },
@@ -53,9 +51,8 @@ const resolvers = {
 
       );
     },
-  },
-};
-
+  }
+  
 module.exports = resolvers;
 
 

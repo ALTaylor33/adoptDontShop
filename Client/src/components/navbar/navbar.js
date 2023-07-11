@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+
+
 //removed  from parameters of Navbar
 const Navbar = ({ handleSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -71,12 +74,13 @@ const Navbar = ({ handleSearch }) => {
 
   return (
     <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/donate">Donate</a></li>
-        <li><a href="/user">My Profile</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
+      <div className='header' >
+      <h1>Adopt Dont Shop</h1>
+      </div>
+        <Link to="/" >Home</Link>
+        <Link to="/Donation" >Donate</Link>
+        <Link to="/User" >User</Link>
+        <Link to="Contact" >Contact</Link>
       <form onSubmit={handleSearchSubmit}>
         <input
           type="text"

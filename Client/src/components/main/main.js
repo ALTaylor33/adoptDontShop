@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
+import picture from '../../assests/img/puppy.jpg'
+import picture2 from '../../assests/img/puppykitty.png'
+import picture3 from '../../assests/img/774079.jpg'
+import './styles.css'
 
 const Main = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const backgrounds = [
-    './Client/public/assests/img/774079.jpg',
-    './Client/public/assests/img/puppy.jpg',
-    './Client/public/assests/img/puppykitty.png'
+    picture, 
+    picture2,
+    picture3
+    // '../../assests/img/774079.jpg',
+    // '../../assests/img/puppy.jpg',
+    // '../../assests/img/puppykitty.png'
   ];
 
   useEffect(() => {
@@ -20,10 +27,11 @@ const Main = () => {
   }, [backgrounds.length]);
 
   return (
+    // <img src={picture} ></img>
     <Carousel interval={null} activeIndex={backgroundIndex}>
       {backgrounds.map((background, index) => (
         <Carousel.Item key={background}>
-          <img className="d-block w-100" src={background} alt={`Background ${index + 1}`} />
+          <img className="test" src={background} alt={`Background ${index + 1}`} />
         </Carousel.Item>
       ))}
     </Carousel>
