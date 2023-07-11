@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 //removed  from parameters of Navbar
 const Navbar = ({ handleSearch }) => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
   // const [breedFilter, setBreedFilter] = useState('');
@@ -12,7 +13,7 @@ const Navbar = ({ handleSearch }) => {
   // const [colorFilter, setColorFilter] = useState('');
   // const [genderFilter, setGenderFilter] = useState('');
   // const [radiusFilter, setRadiusFilter] = useState('');
-  const navigate = useNavigate();
+
 
   const handleSearchInput = (event) => {
       setSearchTerm(event.target.value);

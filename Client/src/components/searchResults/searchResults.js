@@ -47,21 +47,23 @@ const SearchResults = () => {
 
   return (
     <div>
-      <h2>Search Results</h2>
-      <ul>
-        {currentPets.map((pet) => (
-          <li key={pet.id}>
+    <h2>Search Results</h2>
+    <ul>
+      {currentPets.map((pet) => (
+        <li key={pet.id}>
+          <Link to={`/adoption/${pet.id}`}>
             <img src={pet.photos[0]?.small} alt={pet.name} />
-            <h3>{pet.name}</h3>
-            <p>
-              <strong>Species:</strong> {pet.species}
-            </p>
-            <p>
-              <strong>Age:</strong> {pet.age}
-            </p>
-            <p>
-              <strong>Breed:</strong> {pet.breeds.primary}
-            </p>
+          </Link>
+          <h3>{pet.name}</h3>
+          <p>
+            <strong>Species:</strong> {pet.species}
+          </p>
+          <p>
+            <strong>Age:</strong> {pet.age}
+          </p>
+          <p>
+            <strong>Breed:</strong> {pet.breeds.primary}
+          </p>
           </li>
         ))}
       </ul>
