@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Carousel, Button } from 'react-bootstrap';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import picture from '../../assests/img/puppy.jpg';
 
 const Adoption = ({userId}) => {
-  const [pet, setPet] = useState(null);
+  // const [pet, setPet] = useState(null);
   const [isSaved, setIsSaved] = useState(false);
+  const pet = {name:"Vinny", photos:[picture]}
 
   useEffect(() => {
     const fetchPet = async () => {
@@ -46,9 +48,9 @@ const Adoption = ({userId}) => {
     }
   };
 
-  if (!pet) {
-    return <div>Loading...</div>;
-  }
+  // if (!pet) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <div>
@@ -75,6 +77,7 @@ const Adoption = ({userId}) => {
             <strong>Description:</strong> {pet.description}
           </Card.Text>
           <Button variant="link" onClick={handleSavePet}>
+            Save
             {isSaved ? <FaHeart color="red" /> : <FaRegHeart />}
           </Button>
         </Card.Body>

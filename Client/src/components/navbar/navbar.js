@@ -81,6 +81,7 @@ const Navbar = ({ handleSearch }) => {
         <Link to="/Donation" >Donate</Link>
         <Link to="/User" >User</Link>
         <Link to="Contact" >Contact</Link>
+        <Link to="Adoption" >Adopt!</Link>
       <form onSubmit={handleSearchSubmit}>
         <input
           type="text"
