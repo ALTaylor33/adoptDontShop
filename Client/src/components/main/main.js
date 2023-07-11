@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
+const bgImg = require('./'); 
 
 
 const Main = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const backgrounds = [
-    'Client/public/assets/img/774079.jpg',
-    'Client/public/assets/img/puppy.jpg',
-    'Client/public/assets/img/puppykitty.png'
+    // 'Client/public/assets/img/774079.jpg',
+    // 'Client/public/assets/img/puppy.jpg',
+    // 'Client/public/assets/img/puppykitty.png'
+
+  
   ];
 
 
@@ -35,3 +38,5 @@ const Main = () => {
 
 
 export default Main;
+
+//import bg, don't use file path use var name 
