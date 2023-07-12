@@ -89,10 +89,10 @@ const NavbarComponent = ({ handleSearch }) => {
     >
 
 
-  <Nav.Link className="ui active button"><a href="/">Home</a></Nav.Link>
-  <Nav.Link className="ui active button"><a href="/donate">Donate</a></Nav.Link>
-  <Nav.Link className="ui active button"><a href="/user">My Profile</a></Nav.Link>
-  <Nav.Link className="ui active button"><a href="/contact">Contact</a></Nav.Link>
+  <Nav.Link className="ui active button" href="/">Home</Nav.Link>
+  <Nav.Link className="ui active button" href="/donate">Donate</Nav.Link>
+  <Nav.Link className="ui active button" href="/user">My Profile</Nav.Link>
+  <Nav.Link className="ui active button" href="/contact">Contact</Nav.Link>
    
     <Form className='float-right' onSubmit={handleSearchSubmit}>
         <input
