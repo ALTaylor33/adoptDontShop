@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
+
+import { useSearchParams, Link } from 'react-router-dom';
+
 import { Link, useSearchParams } from 'react-router-dom';
+
 
 const SearchResults = () => {
   const [pets, setPets] = useState([]);

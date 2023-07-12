@@ -8,6 +8,8 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 
 const Adoption = ({userId}) => {
+
+  //const [pet, setPet] = useState(null);
   const [pet, setPet] = useState(null);
   const [isSaved, setIsSaved] = useState(false);
 
@@ -25,6 +27,7 @@ const Adoption = ({userId}) => {
           }
         });
         const data = await response.json();
+        //setPet(data.animal);
         // setPet(data.animal);
       } catch (error) {
         console.error(error);

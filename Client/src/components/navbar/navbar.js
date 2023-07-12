@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+import { Link, useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 
 import Container from 'react-bootstrap/Container';
@@ -7,7 +9,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+
+
+//removed  from parameters of Navbar
 const NavbarComponent = ({ handleSearch }) => {
+  const navigate = useNavigate();
+const NavbarComponent = ({ handleSearch }) => {
+
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
   const [breedFilter, setBreedFilter] = useState('');
@@ -102,4 +110,6 @@ const NavbarComponent = ({ handleSearch }) => {
   );
 };
 
+
 export default NavbarComponent;
+
