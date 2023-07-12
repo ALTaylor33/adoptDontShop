@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-const bgImg = require('./'); 
+// const bgImg = require('./'); 
 
 
 const Main = () => {
@@ -29,7 +29,7 @@ const Main = () => {
     <Carousel interval={null} activeIndex={backgroundIndex}>
       {backgrounds.map((background, index) => (
         <Carousel.Item key={background}>
-          <img className="d-block w-100" src= {process.env.PUBLIC_URL + "/assets/img/background"+(index+1)+".jpg"} alt={`Background ${index + 1}`} />
+          <img className="d-block w-100" src={"/assets/img/background"+(index+1)+".jpg"} alt={`Background ${index + 1}`} />
         </Carousel.Item>
       ))}
     </Carousel>

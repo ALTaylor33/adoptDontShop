@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 
-const Navbar = ({ handleSearch }) => {
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+const NavbarComponent = ({ handleSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
   const [breedFilter, setBreedFilter] = useState('');
@@ -55,14 +61,25 @@ const Navbar = ({ handleSearch }) => {
   };
 
   return (
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/donate">Donate</a></li>
-        <li><a href="/user">My Profile</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-      <form onSubmit={handleSearchSubmit}>
+    <Navbar expand="lg" className="bg-body-tertiary">
+    <Container fluid>
+  <Navbar.Brand href="/">adoptDontShop</Navbar.Brand>
+  <Navbar.Toggle aria-controls="navbarScroll" />
+  <Navbar.Collapse id="navbarScroll">
+
+  <Nav
+      className="ml-auto my-2 my-lg-0"
+      style={{ maxHeight: '100px' }}
+      navbarScroll
+    >
+
+
+  <Nav.Link className="ui active button"><a href="/">Home</a></Nav.Link>
+  <Nav.Link className="ui active button"><a href="/donate">Donate</a></Nav.Link>
+  <Nav.Link className="ui active button"><a href="/user">My Profile</a></Nav.Link>
+  <Nav.Link className="ui active button"><a href="/contact">Contact</a></Nav.Link>
+   
+    <Form className='float-right' onSubmit={handleSearchSubmit}>
         <input
           type="text"
           placeholder="Search pets..."
@@ -76,11 +93,13 @@ const Navbar = ({ handleSearch }) => {
           <option value="rabbit">Rabbit</option>
           <option value="reptile">Reptile</option>
         </select>
-        {/* Add more filters */}
         <Button type="submit" variant="outline-success">Search</Button>
-      </form>
-    </nav>
+      </Form>
+      </Nav>
+      </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default NavbarComponent;

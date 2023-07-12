@@ -3,7 +3,7 @@ import { client } from "./ApolloClient/client"; //imported client
 import { ApolloProvider } from '@apollo/client';//imported ApolloProvider
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/header'
-import Navbar from './components/navbar/navbar';
+import NavbarComponent from './components/navbar/navbar';
 import AppRouter from './components/appRouter/appRoutes';
 import Footer from './components/footer/footer';
 import Main from './components/main/main';
@@ -20,7 +20,7 @@ function App() {
     
     <Router>
       {/* <Header/> */}
-      <Navbar />
+      <NavbarComponent />
       <Routes>
       <Route path="/" element={<Main />} />
         <Route path="/user" element={<User />} />
