@@ -10,12 +10,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
-
-//removed  from parameters of Navbar
 const NavbarComponent = ({ handleSearch }) => {
   const navigate = useNavigate();
-const NavbarComponent = ({ handleSearch }) => {
-
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
   const [breedFilter, setBreedFilter] = useState('');
@@ -65,7 +61,18 @@ const NavbarComponent = ({ handleSearch }) => {
       gender: genderFilter,
       radius: radiusFilter
     };
-    handleSearch(searchTerm, filters);
+        // generate a string in a key=value format, ex type=cat&location=texas
+        const filtersArray = []
+        for (let key in filters) {
+          filtersArray.push(`${key}=${filters[key]}`)
+        }
+        const searchFilters = filtersArray.join('&')
+        console.log(searchFilters)
+        //navigate to the searchresults page with query parameters
+        navigate({
+          pathname: '/searchResults',
+          search: `?location=${searchTerm}&${searchFilters}`
+        })
   };
 
   return (
@@ -112,4 +119,3 @@ const NavbarComponent = ({ handleSearch }) => {
 
 
 export default NavbarComponent;
-

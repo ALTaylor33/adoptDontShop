@@ -34,7 +34,7 @@ async function getBearerToken() {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      data: 'client_id=k7Gm4GhF1D4qVVGsGstOzk0vTo7dbPZoPP4jhpeiU3NuIN47UK&client_secret=Hy4JtY9o6dKXy4JsrtCtWFPo6AsBb3Zk2g32XP30&grant_type=client_credentials'
+      data: 'client_id=uxdduxVC98EIUmwwVxuRovwcKprDjYkejYtW50NrWlNWP2Nd4Z&client_secret=Vw6ywefK6i6y9VNBcrThA4fxW27D6N5YmoSDmDEe&grant_type=client_credentials'
     });
     return response.data.access_token;
   } catch (error) {

@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
-import { useSearchParams, Link } from 'react-router-dom';
-
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 
 
 const SearchResults = () => {
   const [pets, setPets] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [petsPerPage] = useState(20);
-  const [searchParams, setSearchParams] = useSearchParams()
+  const searchParams = useSearchParams()
+  const navigate = useNavigate();
   console.log(searchParams)
   let filters = ''
   const filtersArr = []
@@ -33,19 +32,25 @@ const SearchResults = () => {
     };
 
     fetchPets();
-  }, [searchParams, currentPage, petsPerPage]);
+  }, []);
 
   const indexOfLastPet = currentPage * petsPerPage;
   const indexOfFirstPet = indexOfLastPet - petsPerPage;
-  const currentPets = pets.slice(indexOfFirstPet, indexOfLastPet);
+  
+  let currentPets = [] 
 
-  const totalPages = Math.ceil(pets.length / petsPerPage);
+  let totalPages = 1
+  
+  if (pets && pets.length > 0) { 
+    currentPets = pets.slice(indexOfFirstPet, indexOfLastPet)
+    totalPages = Math.ceil(pets.length / petsPerPage)
+  }
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  if (pets.length === 0) {
+  if (!pets || pets.length === 0) {
     return <div>No pets found.</div>;
   }
 
@@ -55,9 +60,9 @@ const SearchResults = () => {
     <ul>
       {currentPets.map((pet) => (
         <li key={pet.id}>
-        
-            <img src={pet.photos[0]?.small} alt={pet.name} />
-         
+          <Link to={`/adoption/${pet.id}`} onClick={() => navigate(`/adoption/${pet.id}`)}>
+  <img src={pet.photos[0]?.small} alt={pet.name} />
+</Link>
           <h3>{pet.name}</h3>
           <p>
             <strong>Species:</strong> {pet.species}
