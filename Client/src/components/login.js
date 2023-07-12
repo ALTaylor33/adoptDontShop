@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+
 
 const Login = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -16,34 +16,39 @@ const Login = () => {
         }
     ];
 
-    const errorMessage= "invalid username or password";
+    const errorMessage = "invalid username or password";
 
     const handleSubmit = (event) => {
         // Prevent page reload
         event.preventDefault();
-    };
 
-    const {uname, pass} = document.forms[0];
+       const { uname, pass } = document.forms[0];
+    // const uname= "user1"
+    // const pass = "pass1"
 
     //find login info that matches data in db
-    const userData = database.find((user) => user.username === uname.value);
+    const userData = database.find((user) => user.username === uname);
 
     //then compare the input data with data in the database
     if (userData) {
-        if (userData.password !== pass.value) {
-          // if password is wrong, show error message
-          alert.window(errorMessage);
+        if (userData.password !== pass) {
+            // if password is wrong, show error message
+            console.log(errorMessage);
         } else {
-          setIsSubmitted(true);
+            setIsSubmitted(true);
         }
-      } else {
+    } else {
         // if username does not exist in the database, display error message
-        alert.window(errorMessage);
-      }
-    
+        console.log(errorMessage);
+    }  
+    };
+
+   
+
 
     return (
-        <div className="form">
+        <div className="login-form">
+            <div className="title">Login</div>
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
                     <label>Username </label>
@@ -56,13 +61,13 @@ const Login = () => {
                     {/* {renderErrorMessage("pass")} */}
                 </div>
                 <div className="button-container">
-                    <input type="submit" />
+                    <input type="submit"  />
+                {isSubmitted ? <div>User is successfully logged in</div> : console.log("not logged in")}
                 </div>
             </form>
-            <div className="login-form">
-  <div className="title">Sign In</div>
-  {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
-</div>
+
+
+         
         </div>
     )
 }
