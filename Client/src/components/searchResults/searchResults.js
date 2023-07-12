@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
+import { Card, Col, Row } from 'react-bootstrap';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
-
 
 const SearchResults = () => {
   const [pets, setPets] = useState([]);
@@ -54,33 +53,34 @@ const SearchResults = () => {
     return <div>No pets found.</div>;
   }
 
+
   return (
     <div>
-    <h2>Search Results</h2>
-    <ul>
-      {currentPets.map((pet) => (
-        <li key={pet.id}>
-          <Link to={`/adoption/${pet.id}`} onClick={() => navigate(`/adoption/${pet.id}`)}>
-  <img src={pet.photos[0]?.small} alt={pet.name} />
-</Link>
-          <h3>{pet.name}</h3>
-          <p>
-            <strong>Species:</strong> {pet.species}
-          </p>
-          <p>
-            <strong>Age:</strong> {pet.age}
-          </p>
-          <p>
-            <strong>Breed:</strong> {pet.breeds.primary}
-          </p>
-          </li>
+      <h2 className="text-center">Search Results</h2>
+      <Row>
+        {currentPets.map((pet) => (
+          <Col key={pet.id} xs={12} sm={6} md={4} lg={3}>
+            <Card>
+              <Link to={`/adoption/${pet.id}`} onClick={() => navigate(`/adoption/${pet.id}`)}>
+                <Card.Img variant="top" src={pet.photos[0]?.small} alt={pet.name} />
+              </Link>
+              <Card.Body>
+                <Card.Title>{pet.name}</Card.Title>
+                <Card.Text>
+                  <strong>Species:</strong> {pet.species}
+                </Card.Text>
+                <Card.Text>
+                  <strong>Age:</strong> {pet.age}
+                </Card.Text>
+                <Card.Text>
+                  <strong>Breed:</strong> {pet.breeds.primary}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </ul>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+      </Row>
+      <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
     </div>
   );
 };
@@ -95,10 +95,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   return (
     <ul className="pagination">
       {pageNumbers.map((pageNumber) => (
-        <li
-          key={pageNumber}
-          className={pageNumber === currentPage ? 'active' : ''}
-        >
+        <li key={pageNumber} className={pageNumber === currentPage ? 'active' : ''}>
           <button onClick={() => onPageChange(pageNumber)}>{pageNumber}</button>
         </li>
       ))}
