@@ -38,9 +38,12 @@ const resolvers = {
         { _id: petId },
 
       );
-    }
-  }
-}
 
-
+    },
+  },
+};
+  
 module.exports = resolvers;
+
+
+

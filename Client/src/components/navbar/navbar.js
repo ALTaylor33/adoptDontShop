@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+import { Link, useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 
 import Container from 'react-bootstrap/Container';
@@ -7,7 +9,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+
 const NavbarComponent = ({ handleSearch }) => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
   const [breedFilter, setBreedFilter] = useState('');
@@ -57,7 +61,18 @@ const NavbarComponent = ({ handleSearch }) => {
       gender: genderFilter,
       radius: radiusFilter
     };
-    handleSearch(searchTerm, filters);
+        // generate a string in a key=value format, ex type=cat&location=texas
+        const filtersArray = []
+        for (let key in filters) {
+          filtersArray.push(`${key}=${filters[key]}`)
+        }
+        const searchFilters = filtersArray.join('&')
+        console.log(searchFilters)
+        //navigate to the searchresults page with query parameters
+        navigate({
+          pathname: '/searchResults',
+          search: `?location=${searchTerm}&${searchFilters}`
+        })
   };
 
   return (
@@ -74,10 +89,10 @@ const NavbarComponent = ({ handleSearch }) => {
     >
 
 
-  <Nav.Link className="ui active button"><a href="/">Home</a></Nav.Link>
-  <Nav.Link className="ui active button"><a href="/donate">Donate</a></Nav.Link>
-  <Nav.Link className="ui active button"><a href="/user">My Profile</a></Nav.Link>
-  <Nav.Link className="ui active button"><a href="/contact">Contact</a></Nav.Link>
+  <Nav.Link className="ui active button" href="/">Home</Nav.Link>
+  <Nav.Link className="ui active button" href="/donate">Donate</Nav.Link>
+  <Nav.Link className="ui active button" href="/user">My Profile</Nav.Link>
+  <Nav.Link className="ui active button" href="/contact">Contact</Nav.Link>
    
     <Form className='float-right' onSubmit={handleSearchSubmit}>
         <input
@@ -101,5 +116,6 @@ const NavbarComponent = ({ handleSearch }) => {
     </Navbar>
   );
 };
+
 
 export default NavbarComponent;
