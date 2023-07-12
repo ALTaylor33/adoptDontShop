@@ -4,7 +4,7 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import picture from '../../assests/img/puppy.jpg';
 
 const Adoption = ({userId}) => {
-  // const [pet, setPet] = useState(null);
+  //const [pet, setPet] = useState(null);
   const [isSaved, setIsSaved] = useState(false);
   const pet = {name:"Vinny", photos:[picture]}
 
@@ -17,7 +17,7 @@ const Adoption = ({userId}) => {
           }
         });
         const data = await response.json();
-        setPet(data.animal);
+        //setPet(data.animal);
       } catch (error) {
         console.error(error);
       }

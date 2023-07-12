@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
 
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 //removed  from parameters of Navbar
-const Navbar = ({ handleSearch }) => {
+const NavbarComponent = ({ handleSearch }) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
@@ -74,16 +80,25 @@ const Navbar = ({ handleSearch }) => {
   };
 
   return (
-    <nav>
-      <div className='header' >
-      <h1>Adopt Dont Shop</h1>
-      </div>
-        <Link to="/" >Home</Link>
-        <Link to="/Donation" >Donate</Link>
-        <Link to="/User" >User</Link>
-        <Link to="Contact" >Contact</Link>
-        <Link to="Adoption" >Adopt!</Link>
-      <form onSubmit={handleSearchSubmit}>
+    <Navbar expand="lg" className="bg-body-tertiary">
+    <Container fluid>
+  <Navbar.Brand href="/">adoptDontShop</Navbar.Brand>
+  <Navbar.Toggle aria-controls="navbarScroll" />
+  <Navbar.Collapse id="navbarScroll">
+
+  <Nav
+      className="ml-auto my-2 my-lg-0"
+      style={{ maxHeight: '100px' }}
+      navbarScroll
+    >
+
+
+  <Nav.Link className="ui active button"><a href="/">Home</a></Nav.Link>
+  <Nav.Link className="ui active button"><a href="/donate">Donate</a></Nav.Link>
+  <Nav.Link className="ui active button"><a href="/user">My Profile</a></Nav.Link>
+  <Nav.Link className="ui active button"><a href="/contact">Contact</a></Nav.Link>
+   
+    <Form className='float-right' onSubmit={handleSearchSubmit}>
         <input
           type="text"
           placeholder="Search pets..."
@@ -97,11 +112,13 @@ const Navbar = ({ handleSearch }) => {
           <option value="rabbit">Rabbit</option>
           <option value="reptile">Reptile</option>
         </select>
-        {/* Add more filters */}
-        <button type="submit">Search</button>
-      </form>
-    </nav>
+        <Button type="submit" variant="outline-success">Search</Button>
+      </Form>
+      </Nav>
+      </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default NavbarComponent;
