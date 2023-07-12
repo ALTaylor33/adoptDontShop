@@ -1,11 +1,19 @@
-// import React from 'react';
 
-// const Header = () => {
-//   return (
-//     <div>
-//       <h1>Adopt Dont Shop</h1>
-//     </div>
-//   );
-// };
+import React from 'react';
 
-// export default Header;
+
+const Header = () => {
+  return (
+    <div>
+     
+      <h1 className='text-center'>Adopt Dont Shop</h1>
+   
+   
+    </div>
+  );
+};
+
+
+export default Header;
+
+

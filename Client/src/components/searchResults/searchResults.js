@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
+
 import { useSearchParams, Link } from 'react-router-dom';
+
+import { Link, useSearchParams } from 'react-router-dom';
+
 
 const SearchResults = () => {
   const [pets, setPets] = useState([]);
@@ -51,9 +55,9 @@ const SearchResults = () => {
     <ul>
       {currentPets.map((pet) => (
         <li key={pet.id}>
-          <Link to={`/adoption/${pet.id}`}>
+        
             <img src={pet.photos[0]?.small} alt={pet.name} />
-          </Link>
+         
           <h3>{pet.name}</h3>
           <p>
             <strong>Species:</strong> {pet.species}

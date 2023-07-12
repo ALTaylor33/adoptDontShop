@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { Link, useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 
@@ -9,44 +10,46 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
+
 //removed  from parameters of Navbar
 const NavbarComponent = ({ handleSearch }) => {
   const navigate = useNavigate();
+const NavbarComponent = ({ handleSearch }) => {
+
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
-  // const [breedFilter, setBreedFilter] = useState('');
-  // const [weightFilter, setWeightFilter] = useState('');
-  // const [colorFilter, setColorFilter] = useState('');
-  // const [genderFilter, setGenderFilter] = useState('');
-  // const [radiusFilter, setRadiusFilter] = useState('');
-
+  const [breedFilter, setBreedFilter] = useState('');
+  const [weightFilter, setWeightFilter] = useState('');
+  const [colorFilter, setColorFilter] = useState('');
+  const [genderFilter, setGenderFilter] = useState('');
+  const [radiusFilter, setRadiusFilter] = useState('');
 
   const handleSearchInput = (event) => {
-      setSearchTerm(event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   const handleFilterChange = (event) => {
     const { name, value } = event.target;
-  
+
     switch (name) {
       case 'type':
         setTypeFilter(value);
         break;
-      // case 'breed':
-      //   setBreedFilter(value);
-      //   break;
-      // case 'weight':
-      //   setWeightFilter(value);
-      //   break;
-      // case 'color':
-      //   setColorFilter(value);
-      //   break;
-      // case 'gender':
-      //   setGenderFilter(value);
-      //   break;
-      // case 'radius':
-      //   setRadiusFilter(value);
-      //   break;
+      case 'breed':
+        setBreedFilter(value);
+        break;
+      case 'weight':
+        setWeightFilter(value);
+        break;
+      case 'color':
+        setColorFilter(value);
+        break;
+      case 'gender':
+        setGenderFilter(value);
+        break;
+      case 'radius':
+        setRadiusFilter(value);
+        break;
       default:
         break;
     }
@@ -55,28 +58,14 @@ const NavbarComponent = ({ handleSearch }) => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     const filters = {
-      species: typeFilter,
-      // breed: breedFilter,
-      // weight: weightFilter,
-      // color: colorFilter,
-      // gender: genderFilter,
-      // radius: radiusFilter
+      type: typeFilter,
+      breed: breedFilter,
+      weight: weightFilter,
+      color: colorFilter,
+      gender: genderFilter,
+      radius: radiusFilter
     };
-
-    // generate a string in a key=value format, ex type=cat&location=texas
-    const filtersArray = []
-    for (let key in filters) {
-      filtersArray.push(`${key}=${filters[key]}`)
-    }
-    const searchFilters = filtersArray.join('&')
-    console.log(searchFilters)
-    //navigate to the searchresults page with query parameters
-    navigate({
-      pathname: '/searchResults',
-      search: `?location=${searchTerm}&${searchFilters}`
-    })
-    //window.location.href = '/searchResults?query='+searchTerm
-    //handleSearch(searchTerm, filters);
+    handleSearch(searchTerm, filters);
   };
 
   return (
@@ -121,4 +110,6 @@ const NavbarComponent = ({ handleSearch }) => {
   );
 };
 
+
 export default NavbarComponent;
+
