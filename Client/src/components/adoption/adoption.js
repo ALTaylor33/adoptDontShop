@@ -1,30 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Carousel, Button } from 'react-bootstrap';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
-//import picture from '../../assests/img/puppy.jpg';
+import { FaRegHeart } from 'react-icons/fa';
+import { useParams } from 'react-router-dom';
 
-const Adoption = ({userId}) => {
+const Adoption = ({ userId }) => {
+  const { id } = useParams();
   const [pet, setPet] = useState(null);
-  const [isSaved, setIsSaved] = useState(false);
-  //const pet = {name:"Vinny", photos:[picture]}
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchPet = async () => {
       try {
-        const response = await fetch('https://api.petfinder.com/v2/animals/123', {
+        const response = await fetch(`https://api.petfinder.com/v2/animals/${id}`, {
           headers: {
             'Authorization': 'Bearer YOUR_API_KEY'
           }
         });
         const data = await response.json();
         setPet(data.animal);
+        setLoading(false);
       } catch (error) {
         console.error(error);
+        setError(error);
+        setLoading(false);
       }
     };
 
     fetchPet();
-  }, []);
+  }, [id]);
 
   const handleSavePet = async (petId) => {
     try {
@@ -36,21 +40,22 @@ const Adoption = ({userId}) => {
         },
         body: JSON.stringify({ petId }),
       });
-  
+
       if (!response.ok) {
         throw new Error('Failed to save/remove pet');
       }
-  
-    } 
-    catch (error) {
+    } catch (error) {
       console.error(error);
-     
     }
   };
 
-  // if (!pet) {
-  //   return <div>Loading...</div>;
-  // }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error occurred while fetching pet data.</div>;
+  }
 
   return (
     <div>
@@ -78,7 +83,7 @@ const Adoption = ({userId}) => {
           </Card.Text>
           <Button variant="link" onClick={handleSavePet}>
             Save
-            {isSaved ? <FaHeart color="red" /> : <FaRegHeart />}
+            <FaRegHeart />
           </Button>
         </Card.Body>
       </Card>

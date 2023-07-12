@@ -80,9 +80,9 @@ const Navbar = ({ handleSearch }) => {
       </div>
         <Link to="/" >Home</Link>
         <Link to="/Donation" >Donate</Link>
-        <Link to="/User" >User</Link>
+        <Link to="/User" >My Profile</Link>
         <Link to="Contact" >Contact</Link>
-        <Link to="Adoption" >Adopt!</Link>
+
       <form onSubmit={handleSearchSubmit}>
         <input
           type="text"
