@@ -8,6 +8,7 @@ import Donation from '../donation/donation';
 import Contact from '../contact/contact';
 import NotFound from '../notFound/notFound';
 import SearchResults from '../searchResults/searchResults'
+import Login from '../login'
 
 const AppRouter = () => {
     return (
@@ -18,6 +19,7 @@ const AppRouter = () => {
         <Route path="/donation" element={<Donation />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/searchResults" element={<SearchResults />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     );

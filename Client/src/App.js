@@ -7,6 +7,7 @@ import Navbar from './components/navbar/navbar';
 import AppRouter from './components/appRouter/appRoutes';
 import Footer from './components/footer/footer';
 
+
 function App() {
   return (
     <ApolloProvider client = {client}>
