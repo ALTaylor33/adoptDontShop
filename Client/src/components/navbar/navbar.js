@@ -1,46 +1,47 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
 
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-
-//removed  from parameters of Navbar
-const Navbar = ({ handleSearch }) => {
-  const navigate = useNavigate();
+const NavbarComponent = ({ handleSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
-  // const [breedFilter, setBreedFilter] = useState('');
-  // const [weightFilter, setWeightFilter] = useState('');
-  // const [colorFilter, setColorFilter] = useState('');
-  // const [genderFilter, setGenderFilter] = useState('');
-  // const [radiusFilter, setRadiusFilter] = useState('');
-
+  const [breedFilter, setBreedFilter] = useState('');
+  const [weightFilter, setWeightFilter] = useState('');
+  const [colorFilter, setColorFilter] = useState('');
+  const [genderFilter, setGenderFilter] = useState('');
+  const [radiusFilter, setRadiusFilter] = useState('');
 
   const handleSearchInput = (event) => {
-      setSearchTerm(event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   const handleFilterChange = (event) => {
     const { name, value } = event.target;
-  
+
     switch (name) {
       case 'type':
         setTypeFilter(value);
         break;
-      // case 'breed':
-      //   setBreedFilter(value);
-      //   break;
-      // case 'weight':
-      //   setWeightFilter(value);
-      //   break;
-      // case 'color':
-      //   setColorFilter(value);
-      //   break;
-      // case 'gender':
-      //   setGenderFilter(value);
-      //   break;
-      // case 'radius':
-      //   setRadiusFilter(value);
-      //   break;
+      case 'breed':
+        setBreedFilter(value);
+        break;
+      case 'weight':
+        setWeightFilter(value);
+        break;
+      case 'color':
+        setColorFilter(value);
+        break;
+      case 'gender':
+        setGenderFilter(value);
+        break;
+      case 'radius':
+        setRadiusFilter(value);
+        break;
       default:
         break;
     }
@@ -49,41 +50,36 @@ const Navbar = ({ handleSearch }) => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     const filters = {
-      species: typeFilter,
-      // breed: breedFilter,
-      // weight: weightFilter,
-      // color: colorFilter,
-      // gender: genderFilter,
-      // radius: radiusFilter
+      type: typeFilter,
+      breed: breedFilter,
+      weight: weightFilter,
+      color: colorFilter,
+      gender: genderFilter,
+      radius: radiusFilter
     };
-
-    // generate a string in a key=value format, ex type=cat&location=texas
-    const filtersArray = []
-    for (let key in filters) {
-      filtersArray.push(`${key}=${filters[key]}`)
-    }
-    const searchFilters = filtersArray.join('&')
-    console.log(searchFilters)
-    //navigate to the searchresults page with query parameters
-    navigate({
-      pathname: '/searchResults',
-      search: `?location=${searchTerm}&${searchFilters}`
-    })
-    //window.location.href = '/searchResults?query='+searchTerm
-    //handleSearch(searchTerm, filters);
+    handleSearch(searchTerm, filters);
   };
 
   return (
-    <nav>
-      <div className='header' >
-      <h1>Adopt Dont Shop</h1>
-      </div>
-        <Link to="/" >Home</Link>
-        <Link to="/Donation" >Donate</Link>
-        <Link to="/User" >User</Link>
-        <Link to="Contact" >Contact</Link>
-        <Link to="Adoption" >Adopt!</Link>
-      <form onSubmit={handleSearchSubmit}>
+    <Navbar expand="lg" className="bg-body-tertiary">
+    <Container fluid>
+  <Navbar.Brand href="/">adoptDontShop</Navbar.Brand>
+  <Navbar.Toggle aria-controls="navbarScroll" />
+  <Navbar.Collapse id="navbarScroll">
+
+  <Nav
+      className="ml-auto my-2 my-lg-0"
+      style={{ maxHeight: '100px' }}
+      navbarScroll
+    >
+
+
+  <Nav.Link className="ui active button"><a href="/">Home</a></Nav.Link>
+  <Nav.Link className="ui active button"><a href="/donate">Donate</a></Nav.Link>
+  <Nav.Link className="ui active button"><a href="/user">My Profile</a></Nav.Link>
+  <Nav.Link className="ui active button"><a href="/contact">Contact</a></Nav.Link>
+   
+    <Form className='float-right' onSubmit={handleSearchSubmit}>
         <input
           type="text"
           placeholder="Search pets..."
@@ -97,11 +93,13 @@ const Navbar = ({ handleSearch }) => {
           <option value="rabbit">Rabbit</option>
           <option value="reptile">Reptile</option>
         </select>
-        {/* Add more filters */}
-        <button type="submit">Search</button>
-      </form>
-    </nav>
+        <Button type="submit" variant="outline-success">Search</Button>
+      </Form>
+      </Nav>
+      </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default NavbarComponent;

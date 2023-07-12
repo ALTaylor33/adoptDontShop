@@ -38,7 +38,7 @@ const resolvers = {
         { _id: petId },
 
       );
-    },
+    }
   }
 }
 

@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-import picture from '../../assests/img/puppy.jpg'
-import picture2 from '../../assests/img/puppykitty.png'
-import picture3 from '../../assests/img/774079.jpg'
-import './styles.css'
+// const bgImg = require('./'); 
+
 
 const Main = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const backgrounds = [
-    picture, 
-    picture2,
-    picture3
-    // '../../assests/img/774079.jpg',
-    // '../../assests/img/puppy.jpg',
-    // '../../assests/img/puppykitty.png'
+    // 'Client/public/assets/img/774079.jpg',
+    // 'Client/public/assets/img/puppy.jpg',
+    // 'Client/public/assets/img/puppykitty.png'
+
+  
   ];
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,16 +24,19 @@ const Main = () => {
     };
   }, [backgrounds.length]);
 
+
   return (
-    // <img src={picture} ></img>
     <Carousel interval={null} activeIndex={backgroundIndex}>
       {backgrounds.map((background, index) => (
         <Carousel.Item key={background}>
-          <img className="test" src={background} alt={`Background ${index + 1}`} />
+          <img className="d-block w-100" src={"/assets/img/background"+(index+1)+".jpg"} alt={`Background ${index + 1}`} />
         </Carousel.Item>
       ))}
     </Carousel>
   );
 };
 
+
 export default Main;
+
+//import bg, don't use file path use var name 
