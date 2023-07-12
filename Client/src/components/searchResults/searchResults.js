@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
+
 
 const SearchResults = () => {
   const [pets, setPets] = useState([]);
@@ -30,19 +32,25 @@ const SearchResults = () => {
     };
 
     fetchPets();
-  }, [searchParams, currentPage, petsPerPage]);
+  }, []);
 
   const indexOfLastPet = currentPage * petsPerPage;
   const indexOfFirstPet = indexOfLastPet - petsPerPage;
-  const currentPets = pets.slice(indexOfFirstPet, indexOfLastPet);
+  
+  let currentPets = [] 
 
-  const totalPages = Math.ceil(pets.length / petsPerPage);
+  let totalPages = 1
+  
+  if (pets && pets.length > 0) { 
+    currentPets = pets.slice(indexOfFirstPet, indexOfLastPet)
+    totalPages = Math.ceil(pets.length / petsPerPage)
+  }
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  if (pets.length === 0) {
+  if (!pets || pets.length === 0) {
     return <div>No pets found.</div>;
   }
 
