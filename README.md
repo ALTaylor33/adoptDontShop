@@ -1,6 +1,6 @@
 # Adopt Don't Shop
 
-![alt text](./client/build/assests/img/774079.jpg)
+![Pets Image](client/build/assests/img/774079.jpg)
 
 ## Contents
 
