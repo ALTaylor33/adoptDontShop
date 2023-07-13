@@ -14,11 +14,11 @@ const NavbarComponent = ({ handleSearch }) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
-  const [breedFilter, setBreedFilter] = useState('');
-  const [weightFilter, setWeightFilter] = useState('');
-  const [colorFilter, setColorFilter] = useState('');
-  const [genderFilter, setGenderFilter] = useState('');
-  const [radiusFilter, setRadiusFilter] = useState('');
+  // const [breedFilter, setBreedFilter] = useState('');
+  // const [weightFilter, setWeightFilter] = useState('');
+  // const [colorFilter, setColorFilter] = useState('');
+  // const [genderFilter, setGenderFilter] = useState('');
+  // const [radiusFilter, setRadiusFilter] = useState('');
 
   const handleSearchInput = (event) => {
     setSearchTerm(event.target.value);
@@ -31,23 +31,23 @@ const NavbarComponent = ({ handleSearch }) => {
       case 'type':
         setTypeFilter(value);
         break;
-      case 'breed':
-        setBreedFilter(value);
-        break;
-      case 'weight':
-        setWeightFilter(value);
-        break;
-      case 'color':
-        setColorFilter(value);
-        break;
-      case 'gender':
-        setGenderFilter(value);
-        break;
-      case 'radius':
-        setRadiusFilter(value);
-        break;
-      default:
-        break;
+      // case 'breed':
+      //   setBreedFilter(value);
+      //   break;
+      // case 'weight':
+      //   setWeightFilter(value);
+      //   break;
+      // case 'color':
+      //   setColorFilter(value);
+      //   break;
+      // case 'gender':
+      //   setGenderFilter(value);
+      //   break;
+      // case 'radius':
+      //   setRadiusFilter(value);
+      //   break;
+      // default:
+      //   break;
     }
   };
 
@@ -55,11 +55,11 @@ const NavbarComponent = ({ handleSearch }) => {
     event.preventDefault();
     const filters = {
       type: typeFilter,
-      breed: breedFilter,
-      weight: weightFilter,
-      color: colorFilter,
-      gender: genderFilter,
-      radius: radiusFilter
+      // breed: breedFilter,
+      // weight: weightFilter,
+      // color: colorFilter,
+      // gender: genderFilter,
+      // radius: radiusFilter
     };
         // generate a string in a key=value format, ex type=cat&location=texas
         const filtersArray = []
