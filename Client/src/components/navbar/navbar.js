@@ -52,19 +52,11 @@ const NavbarComponent = ({ handleSearch }) => {
     event.preventDefault();
     const filters = {
       type: typeFilter,
-<<<<<<< HEAD
-      breed: breedFilter,
-      weight: weightFilter,
-      color: colorFilter,
-      gender: genderFilter,
-      radius: radiusFilter,
-=======
       // breed: breedFilter,
       // weight: weightFilter,
       // color: colorFilter,
       // gender: genderFilter,
       // radius: radiusFilter
->>>>>>> e0327dc333117693a2bd3fdcd1484c8e06238b6c
     };
 
     const filtersArray = [];
