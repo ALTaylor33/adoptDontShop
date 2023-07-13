@@ -11,7 +11,7 @@
 
 ## About
 
-Adopt Don't Shop is a website where people who love animals can help find forever homes for all of our wonderful animals. Pets of all kinds can be found here from cats and dogs to birds and lizards; pets for all kinds of people. Here people can also donate to our good cause to help us protect and care for our animals until they are adopted. Check out the website [here](ADD WEBSITE URL).
+Adopt Don't Shop is a website where people who love animals can view and bookmark animals they are interested in. Pets of all kinds can be found here from cats and dogs to birds and lizards; there's a pet for everyone. Here people can also donate to our good cause to help us protect and care for our animals until they are adopted. Check out the website [here](ADD WEBSITE URL).
 
 ## Usage
 
