@@ -12,12 +12,12 @@ const Navbar = ({ handleSearch }) => {
   const navigate = useNavigate();
 
   const handleSearchInput = (event) => {
-      setSearchTerm(event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   const handleFilterChange = (event) => {
     const { name, value } = event.target;
-  
+
     switch (name) {
       case 'type':
         setTypeFilter(value);
@@ -76,7 +76,6 @@ const Navbar = ({ handleSearch }) => {
         <li><a href="/donate">Donate</a></li>
         <li><a href="/user">My Profile</a></li>
         <li><a href="/contact">Contact</a></li>
-        <li><a href="/login">Login</a></li>
       </ul>
       <form onSubmit={handleSearchSubmit}>
         <input
