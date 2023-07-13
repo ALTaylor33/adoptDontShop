@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-// const bgImg = require('./'); 
+
 
 
 const Main = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const backgrounds = [
-    // 'Client/public/assets/img/774079.jpg',
-    // 'Client/public/assets/img/puppy.jpg',
-    // 'Client/public/assets/img/puppykitty.png'
+
     'Client/public/assets/img/background1.jpg',
     'Client/public/assets/img/background2.jpg',
-  '  Client/src/assets/img/background3.jpg'
-    ];
+    'Client/src/assets/img/background3.jpg'
+  ];
 
 
   useEffect(() => {
@@ -30,7 +28,7 @@ const Main = () => {
     <Carousel interval={null} activeIndex={backgroundIndex}>
       {backgrounds.map((background, index) => (
         <Carousel.Item key={background}>
-          <img className="d-block w-100" src={"/assets/img/background"+(index+1)+".jpg"} alt={`Background ${index + 1}`} />
+          <img className="d-block w-100" src={"/assets/img/background" + (index + 1) + ".jpg"} alt={`Background ${index + 1}`} />
         </Carousel.Item>
       ))}
     </Carousel>
@@ -40,4 +38,3 @@ const Main = () => {
 
 export default Main;
 
-//import bg, don't use file path use var name 
