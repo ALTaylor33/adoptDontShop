@@ -15,6 +15,7 @@ import SearchResults from './components/searchResults/searchResults';
 import NotFound from './components/notFound/notFound';
 
 
+
 function App() {
   return (
     
@@ -25,7 +26,7 @@ function App() {
       <Route path="/" element={<Main />} />
         <Route path="/user" element={<User />} />
         <Route path="/adoption/:id" element={<Adoption />} />
-        <Route path="/donation" element={<DonationPage />} />
+        <Route path="/donate" element={<DonationPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/searchResults" element={<SearchResults />} />
         <Route path="*" element={<NotFound />} />
