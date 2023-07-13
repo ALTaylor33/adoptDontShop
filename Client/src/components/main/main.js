@@ -1,8 +1,6 @@
 import React from 'react';
 
 const Main = () => {
-<<<<<<< HEAD
-=======
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const backgrounds = [
     'Client/public/assets/img/774079.jpg',
@@ -24,7 +22,6 @@ const Main = () => {
   }, [backgrounds.length]);
 
 
->>>>>>> e0327dc333117693a2bd3fdcd1484c8e06238b6c
   return (
     <div className="main-container">
       <img
