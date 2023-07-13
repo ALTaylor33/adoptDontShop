@@ -9,18 +9,19 @@ import Contact from '../contact/contact';
 import NotFound from '../notFound/notFound';
 import SearchResults from '../searchResults/searchResults'
 
+
 const AppRouter = () => {
-    return (
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/user" element={<User />} />
-        <Route path="/adoption/:id" element={<Adoption />} />
-        <Route path="/donation" element={<Donation />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/searchResults" element={<SearchResults />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    );
-  };
-  
-  export default AppRouter;
+  return (
+    <Routes>
+      <Route path="/" element={<Main />} />
+      <Route path="/user" element={<User />} />
+      <Route path="/adoption/:id" element={<Adoption />} />
+      <Route path="/donation" element={<Donation />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/searchResults" element={<SearchResults />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+};
+
+export default AppRouter;
