@@ -2,12 +2,14 @@ const express = require('express');
 const axios = require('axios')
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
-
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
-
+const apiRoutes = require('./routes')
 const PORT = process.env.PORT || 3001;
 const app = express();
+const router = express.Router();
+app.use('/api', apiRoutes)
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -32,7 +34,7 @@ async function getBearerToken() {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      data: 'client_id=k7Gm4GhF1D4qVVGsGstOzk0vTo7dbPZoPP4jhpeiU3NuIN47UK&client_secret=Hy4JtY9o6dKXy4JsrtCtWFPo6AsBb3Zk2g32XP30&grant_type=client_credentials'
+      data: 'client_id=uxdduxVC98EIUmwwVxuRovwcKprDjYkejYtW50NrWlNWP2Nd4Z&client_secret=Vw6ywefK6i6y9VNBcrThA4fxW27D6N5YmoSDmDEe&grant_type=client_credentials'
     });
     return response.data.access_token;
   } catch (error) {
@@ -45,7 +47,7 @@ app.get('/petfinder', async (req, res) => {
   try {
     const params = {
       //animal: req.query.animal,
-      location: req.query.location,
+      //location: req.query.location,
       type: req.query.species,
       limit: req.query.limit,
       page: req.query.page,
