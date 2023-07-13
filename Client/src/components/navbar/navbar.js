@@ -80,7 +80,7 @@ const NavbarComponent = ({ handleSearch }) => {
             src="../assets/img/fullLogo.jpg"
             alt="Logo"
             className="logo-image"
-            style={{ width: '100px', height: 'auto' }} 
+            style={{ marginRight: '10px', width: '100px', height: 'auto' }}
           />
           Adopt Don't Shop
         </Navbar.Brand>
@@ -100,12 +100,13 @@ const NavbarComponent = ({ handleSearch }) => {
               Contact
             </Nav.Link>
             <Form className="float-right" onSubmit={handleSearchSubmit}>
-              <input
-                type="text"
-                placeholder="Search pets..."
-                value={searchTerm}
-                onChange={handleSearchInput}
-              />
+            <input
+                  type="text"
+                  placeholder="Search pets..."
+                  value={searchTerm}
+                  onChange={handleSearchInput}
+                  style={{ backgroundColor: 'white', color: 'black',  }}
+                />
               <select name="type" value={typeFilter} onChange={handleFilterChange}>
                 <option value="">Species</option>
                 <option value="dog">Dog</option>
@@ -113,7 +114,7 @@ const NavbarComponent = ({ handleSearch }) => {
                 <option value="rabbit">Rabbit</option>
                 <option value="reptile">Reptile</option>
               </select>
-              <Button type="submit" variant="outline-success">
+              <Button type="submit" variant="outline-success" style={{ backgroundColor: 'blue', color: 'white',  marginLeft: '10px' }}> 
                 Search
               </Button>
             </Form>
