@@ -10,9 +10,34 @@ const DonationPage = () => {
     // Handle donation submission and server-side integration with Stripe
     // Make a POST request to your server endpoint with the donation details
   };
-
+  const donationOrgs = [
+    {
+      img: "",
+      url: ""
+    },
+    {
+      img: "",
+      url: ""
+    },
+    {
+      img: "",
+      url: ""
+    },
+    {
+      img: "",
+      url: ""
+    }
+  ]
   return (
     <div className="container">
+      <h4>Reccommended Donation Organizations</h4>
+      {/*donationOrgs.map or for loop*/}
+          <Card>
+        <Card.Body>
+          <Card.Title></Card.Title>
+        </Card.Body>
+      </Card>
+      {/* {if we had stripe working then we can use the donation card below} */}
       <Card>
         <Card.Body>
           <Card.Title>Make a Donation</Card.Title>

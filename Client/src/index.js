@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+//line 6 was missing. This is why donation and my profile styling were not loading.
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
