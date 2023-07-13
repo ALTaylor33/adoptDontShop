@@ -9,9 +9,10 @@ const Main = () => {
     // 'Client/public/assets/img/774079.jpg',
     // 'Client/public/assets/img/puppy.jpg',
     // 'Client/public/assets/img/puppykitty.png'
-
-  
-  ];
+    'Client/public/assets/img/background1.jpg',
+    'Client/public/assets/img/background2.jpg',
+  '  Client/src/assets/img/background3.jpg'
+    ];
 
 
   useEffect(() => {
