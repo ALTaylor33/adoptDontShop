@@ -56,7 +56,7 @@ const NavbarComponent = ({ handleSearch }) => {
       weight: weightFilter,
       color: colorFilter,
       gender: genderFilter,
-      radius: radiusFilter
+      radius: radiusFilter,
     };
 
     const filtersArray = [];
@@ -68,12 +68,12 @@ const NavbarComponent = ({ handleSearch }) => {
 
     navigate({
       pathname: '/searchResults',
-      search: `?location=${searchTerm}&${searchFilters}`
+      search: `?location=${searchTerm}&${searchFilters}`,
     });
   };
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-primary">
       <Container fluid>
         <Navbar.Brand href="/">
           <img
@@ -100,13 +100,13 @@ const NavbarComponent = ({ handleSearch }) => {
               Contact
             </Nav.Link>
             <Form className="float-right" onSubmit={handleSearchSubmit}>
-            <input
-                  type="text"
-                  placeholder="Search pets..."
-                  value={searchTerm}
-                  onChange={handleSearchInput}
-                  style={{ backgroundColor: 'white', color: 'black',  }}
-                />
+              <input
+                type="text"
+                placeholder="Search pets..."
+                value={searchTerm}
+                onChange={handleSearchInput}
+                style={{ backgroundColor: 'white', color: 'black' }}
+              />
               <select name="type" value={typeFilter} onChange={handleFilterChange}>
                 <option value="">Species</option>
                 <option value="dog">Dog</option>
@@ -114,7 +114,11 @@ const NavbarComponent = ({ handleSearch }) => {
                 <option value="rabbit">Rabbit</option>
                 <option value="reptile">Reptile</option>
               </select>
-              <Button type="submit" variant="outline-success" style={{ backgroundColor: 'blue', color: 'white',  marginLeft: '10px' }}> 
+              <Button
+                type="submit"
+                variant="outline-success"
+                style={{ backgroundColor: 'white', color: 'black', marginLeft: '10px' }}
+              >
                 Search
               </Button>
             </Form>

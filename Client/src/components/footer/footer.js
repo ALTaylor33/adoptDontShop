@@ -31,9 +31,9 @@ export default function Footer() {
         </form>
       </MDBContainer>
 
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+      <div className='text-center p-3'   style={{ backgroundColor: '#0080ff', color: 'white', marginLeft: '0px' }}>
         &copy; {new Date().getFullYear()} Copyright:{' '}
-        <a className='text-dark' href='https://mdbootstrap.com/'>
+        <a className='text-light' href='https://mdbootstrap.com/'>
           Adopt Dont Shop
         </a>
       </div>
