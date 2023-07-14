@@ -1,6 +1,6 @@
 # Adopt Don't Shop
 
-![Pets Image](client/build/assests/img/774079.jpg)
+
 
 ## Contents
 
@@ -11,11 +11,19 @@
 
 ## About
 
-Adopt Don't Shop is a website where people who love animals can view and bookmark animals they are interested in. Pets of all kinds can be found here from cats and dogs to birds and lizards; there's a pet for everyone. Here people can also donate to our good cause to help us protect and care for our animals until they are adopted. Check out the website [here](ADD WEBSITE URL).
+Adopt Don't Shop is a website where people who love animals can view and bookmark animals they are interested in. Pets of all kinds can be found here from cats and dogs to birds and lizards; there's a pet for everyone. Here people can also donate to our good cause to help us protect and care for our animals until they are adopted. Check out the website [here](https://aqueous-ridge-41746-438724c071e7.herokuapp.com/).
 
 ## Usage
 
-Using our site is easy. All you have to do after entering the website is create an account, then you are free to browse and adopt.(ADD IMAGES)
+Using our site is easy. All you have to do after entering the website is create an account, then you are free to browse and adopt.
+
+![Home](<client/build/assests/img/Screenshot 2023-07-13 213339.png>)
+
+![Donate](<client/build/assests/img/Screenshot 2023-07-13 230447.png>)
+
+![Profile](<client/build/assests/img/Screenshot 2023-07-13 230507.png>)
+
+![Contact](<client/build/assests/img/Screenshot 2023-07-13 230523.png>)
 
 ## Technologies
 
