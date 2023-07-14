@@ -3,13 +3,13 @@
   "name": "adoptdontshop",
   "version": "1.0.0",
   "description": "",
-  "main": "server/server.js",
+  "main": "Server/server.js",
   "scripts": {
     "start": "node Server/server.js",
-    "dev": "concurrently \"cd Server && npm run watch\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
-    "seed": "node ./server/seeds/seed.js",
-    "build": "cd client && npm run build"
+    "dev": "concurrently \"cd Server && npm run watch\" \"cd Client && npm start\"",
+    "install": "cd Server && npm i && cd ../Client && npm i",
+    "seed": "node ./Server/seeds/seed.js",
+    "build": "cd Client && npm run build"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
